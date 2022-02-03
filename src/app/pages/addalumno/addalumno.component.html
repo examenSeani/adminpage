@@ -1,0 +1,88 @@
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="addAlumno" class="green-text text-green darken-4">Registrar Alumnos</a></li>
+    <li><a href="pregunamenu" class="green-text text-green darken-4">Registrar Preguntas</a></li>
+    <li><a href="alumnos" class="green-text text-green darken-4">Calificaiónes</a></li>
+    <li class="divider"></li>
+    <li><a (click)="salir()" class="red-text text-red accent-4">Salir</a></li>
+  </ul>
+  
+  <nav class="nav-extended green">
+    <div class="nav-wrapper ">
+  
+      <a href="#" class="brand-logo" style="padding-top: 5px; padding-left: 10px;">ADMINISTRADOR</a>
+      
+      <div style="padding-top: 5px; padding-right: 5px;">
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-trigger transparent-text text-transparent" data-target="dropdown1">utt<i class="material-icons right white-text text-white" id="menu">menu</i></a></li>
+        </ul>
+  
+      </div>
+    </div>
+  </nav>
+  <br/>
+
+<div style="height: 15px;"></div>
+<div class="container center">   
+    <div class=" center">
+        <div class=" container center">
+            <h2 class="green-text text-darken-3">REGISTRO DE USUARIOS</h2>
+            <div class="container row">   
+                <form (ngSubmit)="addAlumno()">
+
+                    <div class="card-panel hoverable grey lighten-5 col s12" height="120" width="150">
+                        <div class="input-field ">
+                            
+                            <input type="text" name="username" placeholder="Nombre completo" [(ngModel)]="alumno.username" required>
+                        </div>
+                    </div>
+
+                    <div class="card-panel hoverable grey lighten-5 col s5" height="120" width="150">
+                        <div class="input-field ">
+                            
+                            <input type="text" name="paterno" placeholder="Apellido Paterno" [(ngModel)]="alumno" required>
+                        </div>
+                    </div>
+
+                    <div class="col s2"></div>
+
+                    
+
+                    <div class="col s2"></div>
+
+                    <div class="card-panel hoverable grey lighten-5 col s5" height="120" width="150">
+                        <div class="input-field ">
+                            
+                            <input type="text" name="time" placeholder="Tiempo de evaluación en segundos" [(ngModel)]="alumno.time" required>
+                        </div>
+                    </div>
+
+                    <!--div class="card-panel hoverable grey lighten-5 col s12" height="120" width="150">
+                        <div class="input-field ">
+                            
+                            <input type="checkbox" name="activeExam" placeholder="Examen Activo" [(ngModel)]="alumno.activeExam1">
+                        </div>
+                    </div>
+
+                    <div class="card-panel hoverable grey lighten-5 col s12" height="120" width="150">
+                        <div class="input-field ">
+                            
+                            <input type="text" name="pregunta" placeholder="Pregunta inicial" [(ngModel)]="alumno.alumnExam.test.pregunta">
+                        </div>
+                    </div>
+                
+                    <div class="card-panel hoverable grey lighten-5 col s12" height="120" width="150">
+                        <div class="input-field ">
+                            
+                            <input type="text" name="respuesta" placeholder="Respuesta Inicial" [(ngModel)]="alumno.alumnExam.test.respuesta">
+                        </div>
+                    </div-->
+                <button type="submit" class="btn waves-effect waves-light">
+                    Registrar
+                </button>
+
+                </form>
+        </div>
+    
+    </div>
+</div> 

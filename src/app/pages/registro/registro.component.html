@@ -1,0 +1,39 @@
+
+<div style="height: 50px;"></div>
+<div class="container center">
+    <form (ngSubmit)="onSubmit(f)"
+        #f="ngForm"
+            class="container ">
+            
+            <img class="responsive-img center" src="../../../assets/utt.png" alt="utt-img" width="380px" />
+            <div style="height: 50px;"></div>
+
+            <div class="row">
+                <span class=" col s12 pink-text text-darken-3" *ngIf="f.submitted && f.controls['email'].errors">El correo es obligatorio</span>
+                <div class="card-panel hoverable grey lighten-5 col s12" height="120" width="150">
+                    <div class="input-field ">
+                        <!--i class="material-icons prefix green-text">account_circle</i!-->
+                        <input class="container validate" type="email" placeholder="Email" name="email" [(ngModel)]="usuario.email" required />
+
+                    </div>
+                </div>
+                <span class=" col s12 pink-text text-darken-3" *ngIf="f.submitted && f.controls['nombre'].errors">El nombre es obligatorio</span>
+                <div class="card-panel hoverable grey lighten-5 col s12" height="120" width="150">
+                    <div class="input-field ">
+                        <!--i class="material-icons prefix green-text">account_circle</i!-->
+                        <input class="container validate" type="text" placeholder="nombre" minlength="4" name="nombre" [(ngModel)]="usuario.nombre" required />
+
+                    </div>
+                </div>
+                <span class=" col s12 pink-text text-darken-3" *ngIf="f.submitted && f.controls['password'].errors">La contraseña debe tener minimo 8 caracteres</span>
+                <div class="card-panel hoverable grey lighten-5 col s12">
+                    <div class="input-field ">
+                        <i class="material-icons prefix green-text"></i>
+                        <input class="container validate"  type="password" placeholder="Contraseña" name="password" minlength="8" [(ngModel)]="usuario.password" required />
+                    </div>
+                </div> 
+                    <button class="btn-large center deep-orange hoverable" type="submit">Login</button>
+            </div>
+    </form>
+
+</div>

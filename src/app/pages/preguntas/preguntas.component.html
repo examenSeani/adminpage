@@ -1,0 +1,25 @@
+<div *ngIf="preguntas.length && correctas.length > 0; else nopreguntas">
+    <ul>
+        <li *ngFor="let p of preguntas">
+            "_id": "{{p.id_pregunta}}",
+            "pregunta_txt": "{{p.preguntatxt}}",<br/>
+            "pregunta_url": "{{p.preguntaurl}}",<br/>
+            "respuesta1": "{{p.respuesta1}}",<br/>
+            "respuesta2": "{{p.respuesta2}}",<br/>
+            "respuesta3": "{{p.respuesta3}}",<br/>
+            "respuesta4": "{{p.respuesta4}}",<br/>
+                -<br/>
+        </li>
+        <li *ngFor=" let c of correctas">
+            {{c.correcta}}
+        </li>
+       
+    </ul>
+
+</div>
+
+
+
+<ng-template #nopreguntas>
+    <h2>No hay Preguntas </h2>
+</ng-template>
