@@ -30,6 +30,8 @@ import * as html2pdf from 'html2pdf.js';
 import { PreguntasmenuComponent } from './pages/preguntasmenu/preguntasmenu.component';
 import { TerceraEtapaComponent } from './pages/tercera-etapa/tercera-etapa.component';
 
+import { EtapaComponent } from './pages/etapa/etapa.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,7 @@ import { TerceraEtapaComponent } from './pages/tercera-etapa/tercera-etapa.compo
     FilterPipe,
     PreguntasmenuComponent,
     TerceraEtapaComponent,
+    EtapaComponent,
   ],
   imports: [
     BrowserModule,

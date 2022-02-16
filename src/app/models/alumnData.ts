@@ -3,7 +3,7 @@
     user?:  string;
     username: string;
     time:  number;
-    alumnData:{paterno:string,carrera: string, materno:string};
+    alumnData:{paterno:string,carrera: string, email:string};
     alumnExam?: {test?:{pregunta?: string, respuesta?: string} };
     
 }

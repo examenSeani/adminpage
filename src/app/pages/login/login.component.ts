@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     .subscribe( resp => {
       console.log(resp);
       Swal.close();
-      this.router.navigateByUrl('alumnos')
+      this.router.navigateByUrl('etapa')
     }, (err) =>{
 
       console.log(err.error.error.messaje);

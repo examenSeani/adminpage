@@ -1,0 +1,16 @@
+#menu{
+    font-size: 45px
+}
+#pdf{
+    font-size: 25px
+}
+
+select {
+    background-color: rgba(106, 161, 95, 0.9);
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #f2f2f2;
+    border-radius: 2px;
+    height: 3rem;
+    display: block;
+}

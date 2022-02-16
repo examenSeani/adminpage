@@ -1,11 +1,57 @@
 <ul id="dropdown1" class="dropdown-content">
+  <!--
     <li><a href="https://adminseaniresgistroe1.web.app"class="green-text text-green darken-4">Registrar Alumnos 1° Etapa</a></li>
     <li><a href="https://adminseani.web.app"class="green-text text-green darken-4">Registrar Alumnos 2° Etapa</a></li>
     <li><a href="https://adminseaniresgistroe3.web.app"class="green-text text-green darken-4">Registrar Alumnos 3° Etapa</a></li>
     <li class="divider"></li>
+    -->
     <li><a (click)="salir()"class="red-text text-red accent-4">Salir</a></li>
   </ul>
+
   
+  <div class="nav-wrapper ">
+
+    <table style="width: 50%;">
+      <tr>
+        <td style="text-align: right;">
+          SELECCIONA ETAPA:
+        </td>
+
+        <td>
+
+         <table  style="width: 100%;">         
+            <tr>
+              <td  style="width: 70%;">
+          <select [(ngModel)]="opcionSeleccionado" (change)="capturar()" id="seleccion"> 
+            <option value="Etapa 1 / 2022">Etapa 1 / 2022</option>
+            <option *ngFor="let dato of datos">
+              {{dato}}
+            </option>
+        </select>
+      </td>
+    <td  style="width: 30%;">
+        <button  (click)="capturar()" class="waves-effect waves-light btn-large right green darken-1">Actualizar</button>
+      </td>
+      </tr> 
+      </table>
+
+        </td>
+
+        <td>
+         
+         
+
+        </td>
+  
+</tr>
+</table>
+
+ 
+
+</div>
+
+
+
   <nav class="nav-extended green">
     <div class="nav-wrapper ">
   
@@ -21,8 +67,12 @@
     </div>
     
   <!-- Inicio del contenido de la Nav-->    
+
+  <!-- 
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
+
+        
         <li class="tab">
           <a class="" href="alumnos">Primera Etapa</a>
         </li>
@@ -30,52 +80,63 @@
           <a class="" href="segunda">Segunda Etapa</a>
         </li>
         <li class="tab" >
-          <a class="active" href="tercera">Tercera Etapa</a>
+          <a class="" href="tercera">Tercera Etapa</a>
+        </li>
+
+        <li class="tab" >
+          <a class="active" href="etapa">Etapas</a>
         </li>
         
-
-      <li class="tab" >
-        <a class="" href="etapa">Etapa</a>
-      </li>
-
-
-
       </ul>
       
     </div>
+    -->
   <!-- Fin del contenido de la Nav-->
+  
   </nav>
+
   <br/>
   
-    <div class="container center">
-      <div class=" center">
-        <div class="input-field center">
-          <i class="material-icons prefix">search</i>
-          <label for="icon_prefix">Nombre del alumno o Carrera</label>
-          <input name="filterAlumn" id="icon_prefix" type="text" class="validate" [(ngModel)]="filterAlumn">
-          
-        </div>
+  <div class="container center">
+    <div class=" center">
+      <div class="input-field center">
+        <i class="material-icons prefix">search</i>
+        <label for="icon_prefix">Nombre del alumno o Carrera</label>
+        <input name="filterAlumn" id="icon_prefix" type="text" class="validate" [(ngModel)]="filterAlumn">
+        
       </div>
     </div>
+  </div>
   
+
     <br/>
-  
+
+    
+
+
     <div class="container " style="padding-top: 5px; padding-right: 10px;">
       <a id="pdf" class="waves-effect waves-light btn-large right green darken-1"(click)="export()"><i class="material-icons right" id="pdf">archive</i>Descargar</a>
     </div> 
       
-    <br/><br/><br/>
+    <br/><br/>
   
   <div class="container" id="tabla">
+
+
   
-    <h3 class="center">Concentrado de calificaciones examen de admisión Tercera etapa</h3>
+    <h3 class="center">Concentrado de calificaciones examen de admisión</h3>
+    <h3 class="center">{{opcionSeleccionado}}</h3>
+
     <br/>
+
+    Total de Registros: {{dataa.length}}
   
     <div *ngIf="alumnoss.length > 0; else noalumnos">
      
       <table class="striped centered responsive-table">
           <thead>
             <tr>
+                <th>#</th>
                 <th>Nombre Completo</th>
                 <th>Carrera</th>
                 <th>Correctas Pensamiento Matematico</th>
@@ -87,13 +148,16 @@
                 <th>Correctas Comprensión lectora</th>
                 <th>Promedio Comprensión lectora</th>
                 <th>Promedio Total</th>
-                
+                <th>Email</th>
             </tr>
           </thead>
   
           <tbody>
-            <tr *ngFor="let a of dataa | filter:filterAlumn">
+            <tr *ngFor="let a of dataa  | filter:filterAlumn; let indice=index ">
   
+              <td> {{indice+1}} 
+               </td>
+              
               <td>{{a.Nombre_Alumno}}</td>
               <td>{{a.carrera}}</td>
               <td>{{a.CorrectasPM}}</td>
@@ -105,7 +169,7 @@
               <td>{{a.CorrectasCL}}</td>
               <td>{{a.promedioCL}}</td>
               <td>{{a.promedioToTal}}</td>
-              
+              <td>{{a.email}}</td>
             </tr>
           </tbody>
         </table>
@@ -140,45 +204,45 @@
               <tbody>
                 <tr>
                   
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 <tr>
                   
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
-                  <td>Buscando Datos ...</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>

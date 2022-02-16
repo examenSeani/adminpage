@@ -3,7 +3,6 @@ import { SegundaServicesService } from '../../services/segunda.services.service'
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import * as html2pdf from 'html2pdf.js';
-import { elementAt } from 'rxjs/operators';
 import { ExporterService } from '../../services/exporter.service';
 declare var $:any;
 @Component({
@@ -27,6 +26,7 @@ export class SegundaEtapaComponent implements OnInit {
   constructor(  public alumnoService: SegundaServicesService, private auth: AuthService, private router:Router, private ExporterService: ExporterService) { }
 
   ngOnInit(): void {
+   
     //carga lista de alumnos de la segunda etapa en un arreglo "alumnoss"
     this.alumnoService.getAlumnos().subscribe( alumnos => { 
       this.alumnoss = alumnos;
@@ -147,7 +147,8 @@ export class SegundaEtapaComponent implements OnInit {
                   alumnoActual.promedioToTal=promT;
                   
                   //console.log(alumnoActual);
-                  //carga todos los datos en dataa
+                  //carga todos los datos en 
+                  this.dataa = [];
                   this.dataa.push(alumnoActual);
                   //console.log(this.dataa)
 
